@@ -200,7 +200,7 @@ void loop()
     
   } else {
     int passedTextTime;
-    Uart.flush();
+    //Uart.flush();
       // This section times the scrolling message depending on what value
     // TextDelayValue is set at.
     switch (DisplayMode) {
