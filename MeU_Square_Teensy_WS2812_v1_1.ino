@@ -173,15 +173,19 @@ void setup()
   //Initializes the matrix and clears the screen
   matrix.begin();
   matrix.setTextWrap(false);
-  matrix.setBrightness(40);
+  matrix.setBrightness(20);
   matrix.setTextColor(0xFFFF);
   matrix.fillScreen(0);
+  //draw a red pixel at 0,0 to indicate panel is on
+  matrix.drawPixel(0,0,drawRGB24toRGB565(255,0,0));
   matrix.show();
   
   //This initiates the timer
   textTimer = millis();
   turnTimer = millis();
   flashTimer = millis();
+  //reset brightness
+  matrix.setBrightness(40);
 }
 
 void loop()
@@ -200,7 +204,7 @@ void loop()
     
   } else {
     int passedTextTime;
-    //Uart.flush();
+    Uart.flush();
       // This section times the scrolling message depending on what value
     // TextDelayValue is set at.
     switch (DisplayMode) {
