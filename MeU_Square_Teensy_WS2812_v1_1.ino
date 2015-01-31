@@ -237,7 +237,7 @@ void loop()
           Red = 255;
           Blue = 120;
           Green = 100;
-          FlashText("STOP");
+          ScrollText("STOP");
             
         } else if (Message == "3") { // if riding mode then flash patch 0 then patch 1
           DisplayBikeSymbol();
